@@ -1,0 +1,2 @@
+#Nucleolus
+Nucleolus is a simplification of Nucleus. More than that Nucleolus provide some improvements in the life cycle of Activities and Fragments. This improvements permits you handle with presenter more easily because you don't need worry about presente state or the view attached in the presenter when your Activities or Fragments are resumed or paused. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached
