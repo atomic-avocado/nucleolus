@@ -9,11 +9,11 @@ import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
 import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
 import io.github.jackmiras.nucleolus.presenter.Presenter;
 
-public abstract class NucleolusCompatActivity<PresenterType extends Presenter> extends AppCompatActivity {
+public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter> extends AppCompatActivity {
     private static final String PRESENTER_STATE_KEY = "presenter_state";
     private NucleolusPresenterHelper<PresenterType> helper = new NucleolusPresenterHelper(this.getPresenterFactory());
 
-    public NucleolusCompatActivity() {
+    public NucleolusAppCompatActivity() {
     }
 
     protected void onCreate(Bundle savedInstanceState) {
