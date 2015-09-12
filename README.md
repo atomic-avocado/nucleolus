@@ -14,7 +14,7 @@ allprojects {
 
 ``` groovy
 dependencies {
-  compile 'com.github.jackmiras:nucleolus:5.0.1'
+  compile 'com.github.jackmiras:nucleolus:5.0.2'
 }
 ```
 ###Quick Start
