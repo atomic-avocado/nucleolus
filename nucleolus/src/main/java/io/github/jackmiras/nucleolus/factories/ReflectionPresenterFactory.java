@@ -1,9 +1,9 @@
-package io.github.jackmiras.nucleolus.factory;
+package io.github.jackmiras.nucleolus.factories;
 
 import android.support.annotation.Nullable;
 
-import io.github.jackmiras.nucleolus.helper.RequiresPresenter;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.helpers.RequiresPresenter;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 /**
  * This class represents a {@link PresenterFactory} that creates a presenter using {@link Class#newInstance()} method.

@@ -4,10 +4,10 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
-import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.factories.ReflectionPresenterFactory;
+import io.github.jackmiras.nucleolus.helpers.NucleolusPresenterHelper;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter> extends AppCompatActivity {
     private static final String PRESENTER_STATE_KEY = "presenter_state";

@@ -3,10 +3,10 @@ package io.github.jackmiras.nucleolus.views;
 import android.app.Fragment;
 import android.os.Bundle;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
-import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.factories.ReflectionPresenterFactory;
+import io.github.jackmiras.nucleolus.helpers.NucleolusPresenterHelper;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public class NucleolusFragment<PresenterType extends Presenter> extends Fragment {
 

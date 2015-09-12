@@ -1,10 +1,10 @@
-package io.github.jackmiras.nucleolus.manager;
+package io.github.jackmiras.nucleolus.managers;
 
 import android.os.Bundle;
 import android.util.Printer;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public abstract class PresenterManager {
     private static PresenterManager instance = new DefaultPresenterManager();

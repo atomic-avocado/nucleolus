@@ -4,10 +4,10 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
-import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.factories.ReflectionPresenterFactory;
+import io.github.jackmiras.nucleolus.helpers.NucleolusPresenterHelper;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public abstract class NucleolusActivity<PresenterType extends Presenter> extends Activity {
 

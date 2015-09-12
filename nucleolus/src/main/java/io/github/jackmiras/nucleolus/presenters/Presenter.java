@@ -1,4 +1,4 @@
-package io.github.jackmiras.nucleolus.presenter;
+package io.github.jackmiras.nucleolus.presenters;
 
 import android.app.Activity;
 import android.app.Fragment;

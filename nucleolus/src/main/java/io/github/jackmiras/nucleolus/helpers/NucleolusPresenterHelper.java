@@ -1,10 +1,10 @@
-package io.github.jackmiras.nucleolus.helper;
+package io.github.jackmiras.nucleolus.helpers;
 
 import android.os.Bundle;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.manager.PresenterManager;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.managers.PresenterManager;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public class NucleolusPresenterHelper<PresenterType extends Presenter> {
 

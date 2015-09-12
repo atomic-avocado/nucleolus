@@ -6,7 +6,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import io.github.jackmiras.nucleolus.sample.R;
-import io.github.jackmiras.nucleolus.helper.RequiresPresenter;
+import io.github.jackmiras.nucleolus.helpers.RequiresPresenter;
 import io.github.jackmiras.nucleolus.sample.presenters.UsersPresenter;
 import io.github.jackmiras.nucleolus.views.NucleolusAppCompatActivity;
 

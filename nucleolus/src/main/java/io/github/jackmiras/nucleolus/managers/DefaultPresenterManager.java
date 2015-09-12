@@ -1,4 +1,4 @@
-package io.github.jackmiras.nucleolus.manager;
+package io.github.jackmiras.nucleolus.managers;
 
 import android.os.Bundle;
 import android.util.Printer;
@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import io.github.jackmiras.nucleolus.factory.PresenterFactory;
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.factories.PresenterFactory;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 
 public class DefaultPresenterManager extends PresenterManager {
     private static final String PRESENTER_ID_KEY = "id";

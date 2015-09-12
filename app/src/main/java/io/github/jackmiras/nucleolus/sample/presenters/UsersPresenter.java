@@ -1,7 +1,7 @@
 package io.github.jackmiras.nucleolus.sample.presenters;
 
 
-import io.github.jackmiras.nucleolus.presenter.Presenter;
+import io.github.jackmiras.nucleolus.presenters.Presenter;
 import io.github.jackmiras.nucleolus.sample.models.User;
 import io.github.jackmiras.nucleolus.sample.views.UserActivity;
 
