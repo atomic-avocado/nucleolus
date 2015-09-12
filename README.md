@@ -46,6 +46,7 @@ public class UsersPresenter extends Presenter<UsersActivity> {
     //TODO Your presente code
 }
 ```
+If you want can you see a small sample project [here](https://github.com/jackmiras/nucleolus/tree/master/app/src/main/java/io/github/jackmiras/nucleolus/sample) 
 
 ###Model View Presenter:
 This pattern is similar to MVC pattern in which controller has been replaced by the presenter. This design pattern splits an application into three main aspects: Model, View and Presenter.
