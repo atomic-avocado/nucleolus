@@ -1,14 +1,14 @@
-package io.github.jackmiras.nucleolus.views;
+package io.github.jackmiras.nucleolus.sample.views;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import io.github.jackmiras.nucleolus.R;
+import io.github.jackmiras.nucleolus.sample.R;
 import io.github.jackmiras.nucleolus.helper.RequiresPresenter;
-import io.github.jackmiras.nucleolus.presenters.UsersPresenter;
-import io.github.jackmiras.nucleolus.view.NucleolusAppCompatActivity;
+import io.github.jackmiras.nucleolus.sample.presenters.UsersPresenter;
+import io.github.jackmiras.nucleolus.views.NucleolusAppCompatActivity;
 
 /**
  * Created by jackmiras on 05/09/15.
