@@ -1,48 +1,54 @@
-package io.github.jackmiras.nucleolus.view;
+package io.github.jackmiras.nucleolus.views;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 
 import io.github.jackmiras.nucleolus.factory.PresenterFactory;
 import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
 import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
 import io.github.jackmiras.nucleolus.presenter.Presenter;
 
-public abstract class NucleolusSupportFragment<PresenterType extends Presenter> extends Fragment {
-
+public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter> extends AppCompatActivity {
     private static final String PRESENTER_STATE_KEY = "presenter_state";
     private NucleolusPresenterHelper<PresenterType> helper = new NucleolusPresenterHelper(this.getPresenterFactory());
 
-    public NucleolusSupportFragment() {
+    public NucleolusAppCompatActivity() {
     }
 
-    public void onCreate(Bundle bundle) {
-        super.onCreate(bundle);
-        if (bundle != null) {
-            this.helper.setPresenterState(bundle.getBundle(PRESENTER_STATE_KEY));
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            this.helper.setPresenterState(savedInstanceState.getBundle(PRESENTER_STATE_KEY));
         }
         this.helper.takeView(this);
     }
 
     @Override
-    public void onResume() {
+    protected void onResume() {
         super.onResume();
         if (helper.getPresenter().getView() == null)
             helper.takeView(this);
     }
 
 
-    public void onSaveInstanceState(Bundle bundle) {
-        super.onSaveInstanceState(bundle);
-        bundle.putBundle(PRESENTER_STATE_KEY, this.helper.savePresenter());
+    protected void onDestroy() {
+        super.onDestroy();
+        if (this.isFinishing()) {
+            this.destroyPresenter();
+        }
+
     }
 
-    public void onPause() {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBundle(PRESENTER_STATE_KEY, this.helper.savePresenter());
+    }
+
+    protected void onPause() {
         super.onPause();
-        this.helper.dropView(this.getActivity().isFinishing());
+        this.helper.dropView(this.isFinishing());
     }
-
-    // The following section can be copy & pasted into any View class, just update their description if needed.
 
     /**
      * The factory class used to create the presenter. Defaults to {@link ReflectionPresenterFactory} to create the presenter
@@ -59,7 +65,7 @@ public abstract class NucleolusSupportFragment<PresenterType extends Presenter> 
     /**
      * Returns a current attached presenter.
      * This method is guaranteed to return a non-null value between
-     * onCreate/onPause and onAttachedToWindow/onDetachedFromWindow calls
+     * onResume/onPause and onAttachedToWindow/onDetachedFromWindow calls
      * if the presenter factory returns a non-null value.
      *
      * @return a currently attached presenter or null.

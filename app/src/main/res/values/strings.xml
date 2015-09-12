@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Nucleolus</string>
+
+    <string name="activity_user_name">Name</string>
+    <string name="activity_user_email">Email</string>
+    <string name="activity_user_password">Password</string>
+    <string name="activity_user_save">SAVE</string>
+
 </resources>

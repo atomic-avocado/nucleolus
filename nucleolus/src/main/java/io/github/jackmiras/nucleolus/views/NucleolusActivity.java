@@ -1,27 +1,25 @@
-package io.github.jackmiras.nucleolus.view;
+package io.github.jackmiras.nucleolus.views;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 
 import io.github.jackmiras.nucleolus.factory.PresenterFactory;
 import io.github.jackmiras.nucleolus.factory.ReflectionPresenterFactory;
 import io.github.jackmiras.nucleolus.helper.NucleolusPresenterHelper;
 import io.github.jackmiras.nucleolus.presenter.Presenter;
 
-public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter> extends AppCompatActivity {
+public abstract class NucleolusActivity<PresenterType extends Presenter> extends Activity {
+
     private static final String PRESENTER_STATE_KEY = "presenter_state";
-    private NucleolusPresenterHelper<PresenterType> helper = new NucleolusPresenterHelper(this.getPresenterFactory());
+    private NucleolusPresenterHelper<PresenterType> helper = new NucleolusPresenterHelper<>(getPresenterFactory());
 
-    public NucleolusAppCompatActivity() {
-    }
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState != null) {
-            this.helper.setPresenterState(savedInstanceState.getBundle(PRESENTER_STATE_KEY));
-        }
-        this.helper.takeView(this);
+        if (savedInstanceState != null)
+            helper.setPresenterState(savedInstanceState.getBundle(PRESENTER_STATE_KEY));
+        helper.takeView(this);
     }
 
     @Override
@@ -31,24 +29,26 @@ public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter
             helper.takeView(this);
     }
 
-
+    @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (this.isFinishing()) {
-            this.destroyPresenter();
-        }
-
+        if (isFinishing())
+            destroyPresenter();
     }
 
+    @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putBundle(PRESENTER_STATE_KEY, this.helper.savePresenter());
+        outState.putBundle(PRESENTER_STATE_KEY, helper.savePresenter());
     }
 
+    @Override
     protected void onPause() {
         super.onPause();
-        this.helper.dropView(this.isFinishing());
+        helper.dropView(isFinishing());
     }
+
+    // The following section can be copy & pasted into any View class, just update their description if needed.
 
     /**
      * The factory class used to create the presenter. Defaults to {@link ReflectionPresenterFactory} to create the presenter
@@ -59,7 +59,7 @@ public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter
      * @return The {@link PresenterFactory} that can build a {@link Presenter}, or null.
      */
     public PresenterFactory<PresenterType> getPresenterFactory() {
-        return ReflectionPresenterFactory.fromViewClass(this.getClass());
+        return ReflectionPresenterFactory.fromViewClass(getClass());
     }
 
     /**
@@ -71,13 +71,13 @@ public abstract class NucleolusAppCompatActivity<PresenterType extends Presenter
      * @return a currently attached presenter or null.
      */
     public PresenterType getPresenter() {
-        return this.helper.getPresenter();
+        return helper.getPresenter();
     }
 
     /**
      * Destroys a presenter that is currently attached to the View.
      */
     public void destroyPresenter() {
-        this.helper.destroyPresenter();
+        helper.destroyPresenter();
     }
 }
