@@ -17,3 +17,4 @@ dependencies {
   compile 'com.github.jackmiras:nucleolus:5.0.1'
 }
 ```
+![](https://github.com/konmik/konmik.github.io/blob/master/images/mvp_everything_is_connected_with_everything.png)
