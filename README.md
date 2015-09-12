@@ -1,5 +1,5 @@
 #Nucleolus
-Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Include this library) pattern to properly connect background tasks with visual parts of an application. Nucleolus is a simplification of Nucleus that provide some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached.
+Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Quick Start) pattern to properly uncouple and integrate your tasks with visual parts of an application. Nucleolus is a simplification of your forked project and provide some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached.
 
 ### Include this library:
 
@@ -17,7 +17,37 @@ dependencies {
   compile 'com.github.jackmiras:nucleolus:5.0.1'
 }
 ```
-###Model View Presenter
+###Quick Start
+-----------
+####Step 1 - Your views should extends NucleolusActivity, NucleolusAppCompatActivity, NucleolusFragment or NucleolusSupportFragment passing the corresponding presenter as parameter.
+```java
+public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+}
+```
+
+####Step 2 - So now you need inform that presenter passed as parameter into Nucleolus views is required to be used on UsersActivity.
+```java
+@RequiresPresenter(UsersPresenter.class)
+public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+}
+```
+
+####Step 3 - Lastly we create our presenter that should extend Presenter class passing as parameter your view class create previously.
+```java
+public class UsersPresenter extends Presenter<UsersActivity> {
+    //TODO Your presente code
+}
+```
+
+###Model View Presenter:
 This pattern is similar to MVC pattern in which controller has been replaced by the presenter. This design pattern splits an application into three main aspects: Model, View and Presenter.
 
 ![](https://d262ilb51hltx0.cloudfront.net/max/894/1*1P4n9JkHChEUVr5umQx4Zw.png)
@@ -34,3 +64,17 @@ Also, presenter does not manage the incoming request traffic as controller.
 
 
 Can you see a comparison of another project patterns [here](https://medium.com/android-news/android-architecture-2f12e1c7d4db)
+
+## Pull Requests
+
+I welcome and encourage all pull requests. It usually will take me within 24 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
+  1. Match coding style (braces, spacing, etc.) This is best achieved using CRTL+ALT+L (Reformat code) on Linux and CMD+Option+L on Mac (not sure for Windows) with Android Studio defaults.
+  2. If its a feature, bugfix, or anything please only change code to what you specify.
+   **DO NOT** do this: Ex: Title "Fixes Crash Related to Bug" includes other files that were changed without explanation or doesn't relate to the bug you fixed. Or another example is a non-descriptive title "Fixes Stuff".
+  3. Pull requests must be made against ```develop``` branch.
+  4. Have fun!
+
+
+## Maintainers
+
+[Jack Miras](https://github.com/jackmiras) ([@jackmiras](https://www.twitter.com/@jackmiras))
