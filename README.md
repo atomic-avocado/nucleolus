@@ -1,2 +1,10 @@
 #Nucleolus
-Nucleolus is a simplification of Nucleus. More than that Nucleolus provide some improvements in the life cycle of Activities and Fragments. This improvements permits you handle with presenter more easily because you don't need worry about presente state or the view attached in the presenter when your Activities or Fragments are resumed or paused. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached
+Nucleolus is a simple Android library forked from Nucleus, which utilizes the [Model-View-Presenter](http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) pattern to properly connect background tasks with visual parts of an application. Nucleolus is a simplification of Nucleus that provide some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached.
+
+### Include this library:
+
+``` groovy
+dependencies {
+  compile 'com.github.jackmiras:nucleolus:5.0.1'
+}
+```
