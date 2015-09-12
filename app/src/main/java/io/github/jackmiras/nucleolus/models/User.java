@@ -7,4 +7,8 @@ public class User {
     public String name;
     public String email;
     public String password;
+
+    public void save() {
+        //TODO Save your object here
+    }
 }
