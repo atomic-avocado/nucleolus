@@ -4,6 +4,15 @@ Nucleolus is a simple Android library forked from Nucleus, which utilizes the [M
 ### Include this library:
 
 ``` groovy
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+``` groovy
 dependencies {
   compile 'com.github.jackmiras:nucleolus:5.0.1'
 }
