@@ -1,5 +1,5 @@
 #Nucleolus
-Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Quick Start) pattern to properly decouple and integrate your tasks with visual parts of an application. Nucleolus is a simplification of Nucleus and provides some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter allow you get the context of your current attached view and check if the view from presenter was detached.
+Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Quick Start) pattern to properly decouple and integrate your tasks with the visual parts of an application. Nucleolus is a simplification of Nucleus and provides some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter allows you to get the context of your current attached view and check if the presenter's view was detached.
 
 ### Include this library:
 
@@ -19,7 +19,7 @@ dependencies {
 ```
 ###Quick Start
 -----------
-####Step 1 - Your views should extends NucleolusActivity, NucleolusAppCompatActivity, NucleolusFragment or NucleolusSupportFragment passing the corresponding presenter as parameter.
+####Step 1 - Your views should extend NucleolusActivity, NucleolusAppCompatActivity, NucleolusFragment or NucleolusSupportFragment and inform the presenter's type as a parameter.
 ```java
 public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
     @Override
@@ -29,7 +29,7 @@ public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
 }
 ```
 
-####Step 2 - So now you need inform that presenter passed as parameter into Nucleolus views is required to be used on UsersActivity.
+####Step 2 - You also need inform that the presenter passed as a parameter is required by UsersActivity.
 ```java
 @RequiresPresenter(UsersPresenter.class)
 public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
@@ -40,7 +40,7 @@ public class UsersActivity extends NucleolusAppCompatActivity<UsersPresenter> {
 }
 ```
 
-####Step 3 - Lastly we create our presenter that should extend Presenter class passing as parameter your view class create previously.
+####Step 3 - Finally, we create our presenter, witch should extend the Presenter class, passing as a parameter your view class created previously.
 ```java
 public class UsersPresenter extends Presenter<UsersActivity> {
     //TODO Your presente code
@@ -64,14 +64,14 @@ The Presenter is responsible for handling all UI events on behalf of the view. T
 Also, presenter does not manage the incoming request traffic as controller.
 
 
-Can you see a comparison of another project patterns [here](https://medium.com/android-news/android-architecture-2f12e1c7d4db)
+You can see a comparison between other project patterns [here](https://medium.com/android-news/android-architecture-2f12e1c7d4db)
 
 ## Pull Requests
 
-I welcome and encourage all pull requests. It usually will take me within 24 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
+I welcome and encourage all pull requests. It usually will take me within 48 hours to respond to any issue or request. Here are some basic rules to follow to ensure timely addition of your request:
   1. Match coding style (braces, spacing, etc.) This is best achieved using CRTL+ALT+L (Reformat code) on Linux and CMD+Option+L on Mac (not sure for Windows) with Android Studio defaults.
-  2. If its a feature, bugfix, or anything please only change code to what you specify.
-   **DO NOT** do this: Ex: Title "Fixes Crash Related to Bug" includes other files that were changed without explanation or doesn't relate to the bug you fixed. Or another example is a non-descriptive title "Fixes Stuff".
+  2. If its a feature, bugfix, or anything else, please only change code where strictly necessary.
+   **DO NOT** do this: Ex: Title "Fixes Crash Related to Bug" but includes other files that were changed without explanation or that weren't related to the bug you fixed. Another example is a non-descriptive title "Fixes Stuff".
   3. Pull requests must be made against ```develop``` branch.
   4. Have fun!
 
