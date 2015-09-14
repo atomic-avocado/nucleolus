@@ -1,5 +1,5 @@
 #Nucleolus
-Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Quick Start) pattern to properly uncouple and integrate your tasks with visual parts of an application. Nucleolus is a simplification of your forked project and provide some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter permits you get the context of your current attached view and check if the view from presenter is was detached.
+Nucleolus is a simple Android library forked from Nucleus, which utilizes the Model View Presenter (See the session after Quick Start) pattern to properly decouple and integrate your tasks with visual parts of an application. Nucleolus is a simplification of Nucleus and provides some improvements in the life cycle of Activities and Fragments. Besides that, the Nucleolus presenter allow you get the context of your current attached view and check if the view from presenter was detached.
 
 ### Include this library:
 
